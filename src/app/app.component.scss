@@ -1,0 +1,15 @@
+body{
+    box-sizing: border-box;
+}
+
+header, footer{
+    height: 70px;
+}
+
+section{
+    height: calc(100vh - 140px);
+}
+
+.main-part{
+    padding-top: 50px;
+}

@@ -1,0 +1,77 @@
+<!-- for form -->
+<div>
+  <div class="alert alert-danger" *ngIf="25>marks.value && marks.value" >
+    <strong>Your Marks isn't considerable</strong>
+  </div>
+    <form #studentForm="ngForm">
+    <div class="form-row">
+      <div class="col-md-1">
+        <div class=" card form-group">
+          <div class="image-upload">
+            <label for="file-input" class="m-0">
+                <img src="../assets/avatar.png">
+            </label>
+        
+            <input id="file-input" type="file" [(ngModel)]='student.file' name='file' #file="ngModel" required (change)="onselectFile(file.value)" >
+          </div>
+        </div>
+      </div> 
+      <div class="form-group col-md-4">
+        <label for="">Name</label>
+        <input type="text" class="form-control" id="" placeholder="Name" [(ngModel)]="student.name" name="name" #name='ngModel'required>
+      </div>
+      <div class="form-group col-md-4">
+        <label for="email">Email</label>
+        <input type="email" class="form-control" id="" placeholder="name.dob@gmail.com" [(ngModel)]="student.email" name="email" #email="ngModel" required>
+      </div>
+      <div class="form-group col-md-1">
+        <label for="marks">Marks</label>
+        <input type="number" class="form-control" id="" placeholder="Marks" [(ngModel)]="student.marks" name="marks" #marks='ngModel' required>
+      </div>
+      <div class="form-group col-md-1">
+        <label for="dept">Dept</label>
+        <select class="form-control custom-select" id="" [(ngModel)]="student.dept" name="dept" #dept='ngModel' (blur)="validateDept(dept.value)" (click)="validateDept(dept.value)" required>
+          <option value='default'>dept</option>
+          <option *ngFor='let dept of depertments'>{{dept}}</option>
+        </select>
+      </div>
+      
+      <div class="form-group col-md-1 d-flex align-items-end">
+        <button type="submit" class="btn btn-primary" [disabled]="!studentForm.form.valid || !deptValue ||!selectedValue || 25>marks.value" (click)="onSubmit(studentForm.value);studentForm.reset()">Submit</button>
+      </div>
+    </div>
+    
+    </form>
+</div>
+
+  <!-- for table -->
+<div>
+    <table class="table table-striped" *ngIf="studentList.length>0">
+        <thead>
+          <tr>
+            <th scope="col">sl.no</th>
+            <th scope="col">photo</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Marks</th>
+            <th scope="col">Dept</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let student of studentList; let i = index">
+            <th scope="row">{{i+1}}</th>
+            <td>{{student.file}}</td>
+            <td>{{student.name}}</td>
+            <td>{{student.email}}</td>
+            <td>{{student.marks}}</td>
+            <td>{{student.dept}}</td>
+            <td class="d-flex justify-content-between">
+            <i class="material-icons" (click)="delete(student)">delete</i>
+            <button class="btn btn-success" (click)="update(student)">update</button>
+          </td>
+          </tr>
+        </tbody>
+    </table>
+</div>
+

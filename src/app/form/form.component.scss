@@ -1,0 +1,33 @@
+.image-upload > input
+{
+    display: none;
+}
+
+.image-upload img
+{
+    width: 80px;
+    height:65px;
+    cursor: pointer;
+}
+label{
+    font-weight: bold;
+    font-size: 20px;
+}
+button{
+    box-shadow: 3px 3px 5px rgb(139, 139, 139),  -3px -3px 5px #ffffff;
+}
+input, select{
+    box-shadow: 3px 3px 5px rgb(139, 139, 139),  -3px -3px 5px #ffffff;
+    background-color: #dde1e7;
+    border-radius: 50px;
+}
+
+input:focus, select:focus{
+    box-shadow: inset 3px 3px 5px rgb(139, 139, 139),  inset -3px -3px 5px #ffffff;
+    background-color: #dde1e7;
+    border: #dde1e7;
+}
+
+.background-color{
+    background-color: #c7f6fc;
+}

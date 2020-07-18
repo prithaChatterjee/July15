@@ -37,7 +37,7 @@
       </div>
       
       <div class="form-group col-md-1 d-flex align-items-end">
-        <button type="submit" class="btn btn-primary" [disabled]="!studentForm.form.valid || !deptValue ||!selectedValue || 25>marks.value" (click)="onSubmit(studentForm.value);studentForm.reset()">Submit</button>
+        <button type="submit" class="btn btn-outline-primary" [disabled]="!studentForm.form.valid || !deptValue ||!selectedValue || 25>marks.value" (click)="onSubmit(studentForm.value);studentForm.reset()">Submit</button>
       </div>
     </div>
     
@@ -68,7 +68,7 @@
             <td>{{student.dept}}</td>
             <td class="d-flex justify-content-between">
             <i class="material-icons" (click)="delete(student)">delete</i>
-            <button class="btn btn-success" (click)="update(student)">update</button>
+            <button class="btn btn-outline-success" (click)="update(student)">update</button>
           </td>
           </tr>
         </tbody>

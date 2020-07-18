@@ -13,7 +13,8 @@ label{
     font-weight: bold;
     font-size: 20px;
 }
-button{
+
+button, table, tr{
     box-shadow: 3px 3px 5px rgb(139, 139, 139),  -3px -3px 5px #ffffff;
 }
 input, select{
